@@ -1,0 +1,33 @@
+type Movie {
+  actors: String!,
+  awards: String!,
+  country: String!,
+  dvd: String,
+  director: String!,
+  genre: String!,
+  language: String!,
+  metaScore: String!,
+  plot: String,
+  poster: String!,
+  production: String,
+  rated: String,
+  ratings: [Rating],
+  released: String,
+  runtime: String,
+  title: String,
+  website: String,
+  writer: String,
+  imdbID: String!,
+  imdbRating: String!,
+  imdbVotes: String!
+}
+
+type Rating {
+  source: String,
+  value: String
+}
+
+type Query {
+  getMovie(value: String!): [Movie!]
+  # getPoster(src: String): String!
+}

@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/api.ts",
+  "scripts": {
+    "start": "nodemon ./src/api.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "graphql": "^15.0.0",
+    "graphql-yoga": "^1.18.3",
+    "https": "^1.0.0",
+    "node-fetch": "^2.6.0"
+  }
+}
