@@ -1,3 +1,8 @@
+type MovieData {
+  Search: [Movie]!,
+  totalResults: String!
+}
+
 type Movie {
   Actors: String,
   Awards: String,
@@ -30,6 +35,6 @@ type Rating {
 }
 
 type Query {
-  getMovie(movieTitle: String!, page: String!): [Movie]!
-  getPoster(src: String): String!
+  getMovie(movieTitle: String!, page: String!): MovieData!
+  # getPoster(src: String): String!
 }

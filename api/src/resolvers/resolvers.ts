@@ -6,13 +6,13 @@ const API_KEY: String = "925eba28"
 const resolvers = {
   Query: {
 
-    getMovie: async (_, { movieTitle, page = 1 }) => {
-      let requestURL = `${BASE_URL}/?apikey=${API_KEY}&s=${movieTitle}&page=${page}`
+    getMovie: async (_, { movieTitle, page }) => {
+      let requestURL = `${BASE_URL}/?apikey=${API_KEY}&s=${movieTitle}&page=${page ? page : 1}`
       return await axios.get(requestURL)
-        .then(resp => resp.data.Search)
+        .then(resp => resp.data)
     },
 
-    getPoster: (_, { posterURL }) => { }
+    // getPoster: (_, { posterURL }) => { }
 
   }
 }
