@@ -1,16 +1,19 @@
-import fetch from 'node-fetch'
+import axios from 'axios'
 
 const BASE_URL: String = "http://www.omdbapi.com"
 const API_KEY: String = "925eba28"
 
 const resolvers = {
   Query: {
-    getMovie: (_, { movieTitle }) => {
-      let requestURL = `${BASE_URL}/?apikey=${API_KEY}=${movieTitle}`
-      return fetch(requestURL)
-        .then(resp => resp.json())
+
+    getMovie: async (_, { movieTitle, page = 1 }) => {
+      let requestURL = `${BASE_URL}/?apikey=${API_KEY}&s=${movieTitle}&page=${page}`
+      return await axios.get(requestURL)
+        .then(resp => resp.data.Search)
     },
-    // getPoster: (_, { posterURL }) => { }
+
+    getPoster: (_, { posterURL }) => { }
+
   }
 }
 
